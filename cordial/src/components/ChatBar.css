@@ -1,0 +1,102 @@
+:root{
+    --bg_search:#2f3135;
+    --chat_bg-color:#363a3f;
+}
+/*Main Chat*/
+.chat{
+    display: flex;
+    flex-direction: column;
+    background:var(--chat_bg-color);
+    flex:0.75;
+    height: 100vh;
+}
+/*Chat Header*/
+.chat_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    padding: 10px;
+}
+
+.hash{
+    color: grey;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.left > h3{
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    flex:0.5;
+    justify-content: space-between;
+}
+
+.right > .MuiSvgIcon-root{
+    padding: 5px;
+    cursor: pointer;
+}
+.right > .MuiSvgIcon-root:hover{
+    color: whitesmoke;
+}
+
+.search_bar{
+    display: flex;
+    align-items: center;
+    color: grey;
+    background:var(--bg_search);
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.search_bar > input{
+    background: transparent;
+    outline-width: 0;
+    color: whitesmoke;
+    border: none;
+}
+/*Chat Message*/
+
+.chat_input{
+    color: lightslategray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px;
+    border-top: 3px solid gray;
+    background: #474b53;
+}
+
+.chat_input > form{
+    flex:1;
+}
+
+.chat_input > form > input{
+    padding:15px;
+    width: 100%;
+    background: transparent;
+    border:none;
+    outline-width: 0;
+    color: whitesmoke;
+    font-size: large;
+}
+
+.input-button{
+    display: none;
+}
+
+.input_icons > .MuiSvgIcon-root{
+  padding: 5px;
+}
+
+.messages{
+    flex: 1;
+}
