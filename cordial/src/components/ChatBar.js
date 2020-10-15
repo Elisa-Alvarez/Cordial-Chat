@@ -5,12 +5,13 @@ import AddCircleIcon from '@material-ui/icons/AddCircle'
 import GiftCardIcon from '@material-ui/icons/CardGiftcard'
 import Gif from '@material-ui/icons/Gif'
 import Emoji from '@material-ui/icons/EmojiEmotions'
+import Message from './Message'
 function ChatBar (){
  return(
      <div className="chat">
          <ChatHeader />
          <div className="messages">
-
+             <Message />
          </div>
          <div className="chat_input">
            <AddCircleIcon fontSize="large" />

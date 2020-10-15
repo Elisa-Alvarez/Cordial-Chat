@@ -100,3 +100,21 @@
 .messages{
     flex: 1;
 }
+
+.message_box{
+    display: flex;
+    align-items: center;
+    color:whitesmoke;
+    padding:20px;
+
+}
+
+.message_info{
+    margin-left: 20px;
+}
+
+.time_stamp{
+    color:gray;
+    padding-left: 20px;
+    font-size: xx-small;
+}
