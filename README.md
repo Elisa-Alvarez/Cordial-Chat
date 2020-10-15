@@ -1,2 +1,2 @@
-# Discord-Clone
+# Cordial Chat
 A clone of discord
