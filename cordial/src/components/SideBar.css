@@ -1,0 +1,114 @@
+:root{
+    --bg_color:#2f312f;
+    --cell-color:#4fb185;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex: 0.25;
+    height: 100vh;
+    background-color:var(--bg_color) ;
+}
+
+.sidebar_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg_color);
+    color: whitesmoke;
+    border-bottom: 3px solid #26282c;
+}
+
+.sidebar_channels{
+    flex: 1;
+}
+.channel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    padding: 10px;
+}
+.sidebar_header{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_addchannel{
+    cursor: pointer;
+}
+.sidebar_addchannel:hover{
+    color: aliceblue ;
+}
+
+/*Channel List*/
+
+.channel_list > h4{
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    background: var(--bg_color);
+    color: gray;
+    cursor: pointer;
+}
+
+.channel_list:hover > h4{
+    color: whitesmoke;
+    background-color: #40464b;
+}
+
+.channel_hash {
+    font-size: 20px;
+    padding: 9px;
+}
+
+/*Voice and User Profile*/
+
+.sidebar_voice,.user_profile{
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    align-items: center;
+    padding: 10px;
+    background: var(--bg_color);
+    border-top:1px solid gray;
+}
+
+.voice_info{
+    flex: 1;
+    padding: 10px;
+}
+.voice_info > h3{
+    color:var(--cell-color)
+}
+.voice_info > p{
+    font-size: smaller;
+}
+.cell{
+    color:var(--cell-color)
+}
+
+.voice_icons > .MuiSvgIcon-root{
+ padding: 8px;
+}
+.voice_icons > .MuiSvgIcon-root:hover{
+    color: #bdbaba;
+   }
+
+.user_info{
+    flex:1;
+    padding: 10px;
+}
+
+.user_info > h3 {
+    color: white
+}
+
+.profile-icons > .MuiSvgIcon-root{
+    padding: 8px;
+   }
+   .profile-icons > .MuiSvgIcon-root:hover{
+    color: #bdbaba;
+   }
