@@ -95,6 +95,7 @@
 }
 .voice_icons > .MuiSvgIcon-root:hover{
     color: #bdbaba;
+    cursor: pointer;
    }
 
 .user_info{
@@ -111,4 +112,5 @@
    }
    .profile-icons > .MuiSvgIcon-root:hover{
     color: #bdbaba;
+    cursor: pointer;
    }
