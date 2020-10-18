@@ -1,0 +1,74 @@
+:root{
+    --button_color:#7DC4B2;
+    --login_background:#363a3f;
+}
+
+.login{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-items: center;   
+    height: 100vh;
+    width: 100%;
+    background-color: var(--login_background);
+
+}
+
+
+.login_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+.login_logo > img{
+    margin-top: 10%;
+    padding-top: 15%;
+    height:56vh;
+    position: relative;
+    
+}
+
+
+.logo_title{
+    margin-top: 2rem;
+    height: 10vh;
+    position: absolute;
+    z-index: 1;
+    color: aliceblue;
+    font-family: 'Lemonada', cursive;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.login > button{
+
+    width: 300px;
+    background-color:var(--button_color) ;
+    color: whitesmoke;
+}
+
+.login > button:hover{
+    background-color: rgb(161, 163, 165);
+    color:aliceblue;
+}
+
+.sign-up_links{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.sign-up_links > p{
+    
+    padding: 8px;
+}
+
+a{
+    color: lightskyblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover{
+    color: turquoise;
+}

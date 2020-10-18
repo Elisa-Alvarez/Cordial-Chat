@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import './SideBar.css'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add'
@@ -10,8 +10,31 @@ import { Avatar } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic'
 import Headphone from '@material-ui/icons/Headset'
 import Settings from '@material-ui/icons/Settings'
-
+import { selectUser } from '../features/userSlice';
+import {useSelector } from 'react-redux'
+import db, {auth} from '../Firebase'
 function SideBar (){
+    const user= useSelector(selectUser)
+    const [channels, setChannels] = useState([])
+
+    useEffect(() => {
+       db.collection('channels').onSnapshot( snapShot =>(setChannels(snapShot.docs.map(doc =>({
+           id:doc.id,
+           channels: doc.data(),
+
+       })))
+       ))
+    }, [])
+
+    const addChannel = () =>{
+        const channelName = prompt("Enter A New Channel Name... ")
+
+        if(channelName){
+            db.collection('channels').add({
+                channelName:channelName
+            })
+        }
+    }
  return(
      <div className="sidebar">
         <div className="sidebar_top">
@@ -25,10 +48,15 @@ function SideBar (){
                      <ExpandMoreIcon />
                      <h4>Text Channels</h4>
                  </div>
-                 <AddIcon className="sidebar_addchannel" />
+                 <AddIcon onClick={addChannel} className="sidebar_addchannel" />
              </div>
              <div className="sidebar_list">
-                  <ChannelList />
+                  {
+                      channels.map( ({id,channels}) =>(
+                          <ChannelList key ={id} id={id} channelName={channels.channelName} />
+                      ))
+
+                  }
              </div>
         </div>
 
@@ -45,15 +73,17 @@ function SideBar (){
         </div>
 
         <div className="user_profile">
-          <Avatar src='#' />
+          <Avatar src={user.photo} />
           <div className="user_info">
-              <h3>User</h3>
-              <p>#thisuserId</p>
+              <h3>{user.displayName}</h3>
+                <p>#{user.uid.substring(0,5)}</p>
           </div>
           <div className="profile-icons">
               <MicIcon />
               <Headphone />
-              <Settings />
+              <Settings onClick = {() =>{
+                   auth.signOut()
+              }} />
           </div>
         </div>
 

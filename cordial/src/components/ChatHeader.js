@@ -6,11 +6,14 @@ import People from '@material-ui/icons/PeopleAltRounded'
 import SearchIcon from '@material-ui/icons/SearchRounded'
 import HelpIcon from '@material-ui/icons/HelpRounded'
 import SendIcon from '@material-ui/icons/SendRounded'
-function ChatHeader (){
+function ChatHeader ({channelName}){
   return(
       <div className="chat_header">
+        
          <div className="left">
-           <h3><span className="hash">#</span>YouTube</h3>
+            { channelName &&
+             <h3><span className="hash">#</span>{channelName}</h3>
+            }
          </div>
          <div className="right">
            <Notification />

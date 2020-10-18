@@ -1,17 +1,17 @@
 import React from 'react'
 import './ChatBar.css'
 import  {Avatar} from '@material-ui/core'
-function Message() {
+function Message({timestamp , message, user}) {
     return (
         <div className="message_box">
-            <Avatar />
+            <Avatar src={user.photo}  />
             <div className="message_info">
-                <h4>User Name
+                <h4> {user.displayName}
                 <span className="time_stamp">
-                    TimeStamp
+                    {new Date(timestamp?.toDate()).toUTCString()}
                 </span>
                 </h4>
-                <p>This a message</p>
+                 <p>{message} </p>
             </div>
         </div>
     )
